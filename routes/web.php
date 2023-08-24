@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\NoteController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,4 +31,5 @@ Route::middleware([
  Route::get('/mastertest',function (){
      return view('front.layout.master');
  });
-
+ //Note routeları
+Route::get('/notes',[NoteController::class,'index'])->name('notes.index');
