@@ -26,3 +26,8 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+//test routeları başlangic
+ Route::get('/mastertest',function (){
+     return view('front.layout.master');
+ });
+
