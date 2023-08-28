@@ -23,9 +23,15 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
+
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+
+    Route::get('notes/createpage',[NoteController::class,'createpage'])->name('notes.createpage');
+
+
+
 });
 //test routeları başlangic
  Route::get('/mastertest',function (){
@@ -33,3 +39,4 @@ Route::middleware([
  });
  //Note routeları
 Route::get('/notes',[NoteController::class,'index'])->name('notes.index');
+Route::post('notes/addNote',[NoteController::class,'addNote'])->name('notes.addnote');
